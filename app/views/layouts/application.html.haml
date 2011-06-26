@@ -1,0 +1,69 @@
+!!!
+%html{ :lang => 'en', 'xml:lang' => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
+  %head
+    %title
+      Fitter Me
+    = javascript_include_tag('application')
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tag   
+  %body
+    #wrapper
+      %header
+        .container_8.clearfix
+          %h1.grid_1
+            %a{:href => root_path} Fitter Me
+          %nav.grid_7
+            %ul.clearfix
+              %li.action
+                %a.has-popupballoon.button.button-blue{:href => "#"}
+                  %span.add>
+                  New Note
+                .popupballoon.top
+                  %h3 Add new note
+                  Title
+                  %br/
+                  %input{:type => "text"}/
+                  %br/
+                  Text
+                  %br/
+                  %textarea
+                  %hr/
+                  %button.button.button-orange Add note
+                  %button.button.button-gray.close Cancel
+              %li.action
+              %li
+                %a{:href => edit_user_registration_path} Profile
+              %li.fr
+                = link_to "Sign out", destroy_user_session_path 
+      %section
+        .container_8.clearfix
+          / Sidebar
+          %aside.grid_1
+            %nav.global
+              %ul.clearfix
+                %li{:class =>  "#{controller.controller_name == 'home' ? 'active' : ''}"}
+                  %a.nav-icon.icon-house{:href => root_path} Dashboard
+                /
+                  %li
+                    %a.nav-icon.icon-time{:href => "#"} Latest Activity
+                %li{:class => "#{controller.controller_name == 'exercises' ? 'active' : ''}"}
+                  %a.nav-icon.icon-book{:href => 'exercises_path'}
+                    Notes                   
+          / Sidebar End
+          / Main Section
+          /
+            %div.grid_7
+              %div.message.info.timoutable
+                = flash[:alert]
+          %section.main-section.grid_7
+            = yield
+        #push
+    %footer
+      #footer-inner.container_8.clearfix
+        .grid_8
+          %span.fr>
+            %a{:href => "#"} Documentation
+            |
+            %a{:href => "#"} Feedback
+          &copy; 2011. All rights reserved. 
+
