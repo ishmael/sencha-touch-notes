@@ -1,0 +1,10 @@
+!!!
+%html{ :lang => 'en', 'xml:lang' => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
+  %head
+    %title
+      Touch Notes
+    = javascript_include_tag('application')
+    = stylesheet_link_tag 'reset','grid','style','messages','forms'
+    = csrf_meta_tag   
+  %body.login
+    = yield

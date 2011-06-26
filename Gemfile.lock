@@ -54,6 +54,8 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    headjs-rails (0.4.0)
+      rails (>= 3.0.0)
     hike (1.1.0)
     i18n (0.6.0)
     jquery-rails (1.0.12)
@@ -131,6 +133,7 @@ DEPENDENCIES
   devise
   haml (>= 3.0.0)
   haml-rails
+  headjs-rails
   jquery-rails
   mongoid (>= 2.0.0.beta.19)
   rails (= 3.1.0.rc4)

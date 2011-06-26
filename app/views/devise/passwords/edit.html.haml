@@ -1,0 +1,26 @@
+.login-box.main-content
+  %header
+    %h2 Change your password
+  %section
+    - if notice
+      .message.info
+        = notice
+    - if alert
+      .message.error
+        = alert
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "clearfix devise", :method => :put }) do |f|
+      - if defined? devise_error_messages
+        .message.error
+          = devise_error_messages!
+      = f.hidden_field :reset_password_token
+      %p
+        = f.password_field :password, :id => 'password' ,:class =>'full', :placeholder => "Password", :required => "required"
+      %p
+        = f.password_field :password_confirmation , :id => 'password_confirmation',:class =>'full', :placeholder => "Password", :required => "required"
+      %p.clearfix
+        %button.button.button-gray.fr{:type => "submit"} Change my password
+    %ul
+      %li
+        %strong> HELP!
+        %br/
+        = render :partial => "devise/shared/links"

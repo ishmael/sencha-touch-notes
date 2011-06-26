@@ -41,6 +41,13 @@ module SenchaTouchNotes
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    config.to_prepare do
+          Devise::SessionsController.layout "devise"
+          Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
+          Devise::ConfirmationsController.layout "devise"
+          Devise::UnlocksController.layout "devise"            
+          Devise::PasswordsController.layout "devise"        
+    end
     # Enable the asset pipeline
     config.assets.enabled = true
   end

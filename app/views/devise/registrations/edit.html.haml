@@ -1,0 +1,34 @@
+.main-content
+  %header
+    %ul.action-buttons.clearfix.fr
+      %li
+        %a.button.button-gray.no-text.help{:href => "documentation/index.html", :rel => "#overlay"}
+          Help
+          %span.help
+    %h2
+      Edit #{resource_name.to_s.humanize}
+  %section.container_6.clearfix
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+      = devise_error_messages!
+      %p
+        = f.label :email
+        %br/
+        = f.text_field :email
+      %p
+        = f.label :password
+        %i (leave blank if you don't want to change it)
+        %br/
+        = f.password_field :password
+      %p
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation
+      %p
+        = f.label :current_password
+        %i (we need your current password to confirm your changes)
+        %br/
+        = f.password_field :current_password
+      %p
+        %button.button.button-gray{:type => "submit"}
+          %span.accept>
+          update

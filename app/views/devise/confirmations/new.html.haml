@@ -1,0 +1,20 @@
+ .login-box.main-content
+  %header
+    %h2 Resend confirmation instructions
+  %section
+    - if notice
+      .message.info
+        = notice
+    - if alert
+      .message.error
+        = alert
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:class => "clearfix devise", :method => :post}) do |f|
+      %p
+        = f.email_field :email,:id=> 'email',:class=> 'full', :placeholder => "Email", :required => "required"
+      %p.clearfix
+        %button.button.button-gray.fr{:type => "submit"} Resend confirmation instructions
+    %ul
+      %li
+        %strong> HELP!
+        %br/
+        = render :partial => "devise/shared/links"

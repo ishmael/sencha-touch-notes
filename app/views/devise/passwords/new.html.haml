@@ -1,0 +1,20 @@
+.login-box.main-content
+  %header
+    %h2 Forgot your password?
+  %section
+    - if notice
+      .message.info
+        = notice
+    - if alert
+      .message.error
+        = alert
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "clearfix devise"}) do |f|
+      %p
+        = f.email_field :email,:id=> 'email',:class=> 'full', :placeholder => "Email", :required => "required"
+      %p.clearfix
+        %button.button.button-gray.fr{:type => "submit"} Send me reset password instructions
+    %ul
+      %li
+        %strong> HELP!
+        %br/
+        = render :partial => "devise/shared/links"
