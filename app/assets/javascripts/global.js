@@ -91,6 +91,7 @@ $(document).ready(function() {
 
     $('.popupballoon .close').click(function(){
         $(this).parents('.popupballoon').fadeOut();
+		return false;
     });
 
     // preview pane setup

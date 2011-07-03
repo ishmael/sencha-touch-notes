@@ -1,23 +1,43 @@
-%h1 Listing notes
+.main-content
+  %header
+    %ul.action-buttons.clearfix.fr
+      %li
+        %a.button.button-gray.no-text{:href => new_note_path,:title => "Add"}
+          add
+          %span.add
+      %li
+        %a.button.button-gray.no-text.current{:href => "#", :onclick => "$(this).addClass('current').parent().siblings().find('a').removeClass('current');$('#contacts').removeClass('grid-view').addClass('list-view');return false;", :title => "View as a List"}
+          List View
+          %span.view-list
+      %li
+        %a.button.button-gray.no-text{:href => "#", :onclick => "$(this).addClass('current').parent().siblings().find('a').removeClass('current');$('#contacts').removeClass('list-view').addClass('grid-view');return false;", :title => "View as a Grid"}
+          Grid View
+          %span.view-grid    
+      %li
+        %a.button.button-gray.no-text.help{:href => "documentation/index.html", :rel => "#overlay"}
+          Help
+          %span.help
+    %h2
+      Listing notes
+  %section.container_6.clearfix
+    %table
+      %tr
+        %th Title
+        %th Content
+        %th User
+        %th
+        %th
+        %th
 
-%table
-  %tr
-    %th Title
-    %th Content
-    %th User
-    %th
-    %th
-    %th
+      - @notes.each do |note|
+        %tr
+          %td= note.title
+          %td= note.content
+          %td= note.user_id
+          %td= link_to 'Show', note
+          %td= link_to 'Edit', edit_note_path(note)
+          %td= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete
 
-  - @notes.each do |note|
-    %tr
-      %td= note.title
-      %td= note.content
-      %td= note.user_id
-      %td= link_to 'Show', note
-      %td= link_to 'Edit', edit_note_path(note)
-      %td= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete
+    %br
 
-%br
 
-= link_to 'New Note', new_note_path

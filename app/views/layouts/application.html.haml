@@ -2,7 +2,7 @@
 %html{ :lang => 'en', 'xml:lang' => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
   %head
     %title
-      Fitter Me
+      Notes
     = javascript_include_tag('application')
     = stylesheet_link_tag 'application'
     = csrf_meta_tag   
@@ -11,8 +11,8 @@
       %header
         .container_8.clearfix
           %h1.grid_1
-            %a{:href => root_path} Fitter Me
-          %nav.grid_7
+            %a{:href => root_path} Notes
+          %nav.grid_6
             %ul.clearfix
               %li.action
                 %a.has-popupballoon.button.button-blue{:href => "#"}
@@ -20,19 +20,22 @@
                   New Note
                 .popupballoon.top
                   %h3 Add new note
-                  Title
-                  %br/
-                  %input{:type => "text"}/
-                  %br/
-                  Text
-                  %br/
-                  %textarea
-                  %hr/
-                  %button.button.button-orange Add note
-                  %button.button.button-gray.close Cancel
+                  = form_for @toolbar_note do |f|
+                    = f.label :title
+                    %br/
+                    = f.text_field :title
+                    %br/
+                    = f.label :content
+                    %br/
+                    = f.text_area :content
+                    %hr/
+                    %button.button.button-orange Add note
+                    %button.button.button-gray.close Cancel
               %li.action
-              %li
+              %li.fr
                 %a{:href => edit_user_registration_path} Profile
+          %nav.grid_1
+            %ul.clearfix
               %li.fr
                 = link_to "Sign out", destroy_user_session_path 
       %section
@@ -41,14 +44,8 @@
           %aside.grid_1
             %nav.global
               %ul.clearfix
-                %li{:class =>  "#{controller.controller_name == 'home' ? 'active' : ''}"}
-                  %a.nav-icon.icon-house{:href => root_path} Dashboard
-                /
-                  %li
-                    %a.nav-icon.icon-time{:href => "#"} Latest Activity
-                %li{:class => "#{controller.controller_name == 'exercises' ? 'active' : ''}"}
-                  %a.nav-icon.icon-book{:href => 'exercises_path'}
-                    Notes                   
+                %li{:class =>  "active"}
+                  %a.nav-icon.icon-note{:href => root_path} Notes
           / Sidebar End
           / Main Section
           /
