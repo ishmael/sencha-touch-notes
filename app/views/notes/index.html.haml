@@ -1,0 +1,23 @@
+%h1 Listing notes
+
+%table
+  %tr
+    %th Title
+    %th Content
+    %th User
+    %th
+    %th
+    %th
+
+  - @notes.each do |note|
+    %tr
+      %td= note.title
+      %td= note.content
+      %td= note.user_id
+      %td= link_to 'Show', note
+      %td= link_to 'Edit', edit_note_path(note)
+      %td= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Note', new_note_path
