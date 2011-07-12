@@ -104,7 +104,7 @@ $(document).ready(function() {
         var url = $(this).find('.more').attr('href');
         if (!$(this).hasClass('current')) {
             $('.preview-pane .preview').animate({left: "-375px"}, 300, function(){
-                $(this).animate({left: "-22px"}, 500).html('<img src="images/ajax-loader.gif" />').load(url);
+                $(this).animate({left: "-22px"}, 500).html('<img src="<%= asset_path "ajax-loader.gif" %>" />').load(url);
             });
         } else {
             $('.preview-pane .preview').animate({left: "-375px"}, 300);

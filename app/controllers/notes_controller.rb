@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  layout "application", :except => [:preview]
   # GET /notes
   # GET /notes.json
   def index
@@ -79,5 +80,9 @@ class NotesController < ApplicationController
       format.html { redirect_to notes_url }
       format.json { head :ok }
     end
+  end
+  
+  def preview
+    @note = Note.find(params[:note_id])
   end
 end

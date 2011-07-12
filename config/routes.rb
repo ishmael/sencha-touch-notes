@@ -1,5 +1,7 @@
 SenchaTouchNotes::Application.routes.draw do
-  resources :notes
+  resources :notes do
+     get 'preview'
+  end
 
   root :to => "notes#index"
   devise_for :users
