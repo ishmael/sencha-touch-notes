@@ -26,7 +26,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
-gem "devise"
+gem "devise", "~> 1.4.2"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "bson_ext"

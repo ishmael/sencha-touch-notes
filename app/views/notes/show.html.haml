@@ -1,15 +1,9 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @note.title
-%p
-  %b Content:
-  = @note.content
-%p
-  %b User:
-  = @note.user_id
-
-= link_to 'Edit', edit_note_path(@note)
-\|
-= link_to 'Back', notes_path
+%h4
+  = @note.title 
+  (
+  = link_to 'edit',edit_note_path(@note)
+  )
+%hr
+  %ul.profile-info
+    %li
+      = @note.content

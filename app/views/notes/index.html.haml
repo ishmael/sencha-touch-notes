@@ -11,9 +11,9 @@
     - @notes.each do |note|
       %ul.listing.list-view
         %li.note
-          %a.more{:href => note_preview_path(note)} &raquo;
+          %a.more{:href => note_path(note)} &raquo;
           = note.title
-          %p= note.content
+          %p= note.updated_at
         /    
           %td= note.title
           %td= note.content

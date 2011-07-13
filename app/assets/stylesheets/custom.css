@@ -25,93 +25,12 @@ body {
 
 /*
  * Footer */
-/*
- * Exercise Type */
-.exercisetype {
-  padding: 10px 10px 10px 10px; }
-  .exercisetype .grid_2 {
-    width: 50%;
-    margin: 0; }
-    .exercisetype .grid_2 .exercise {
-      margin: 0 0 10px 10px; }
-      .exercisetype .grid_2 .exercise input[type=radio] {
-        display: none; }
-      .exercisetype .grid_2 .exercise .select {
-        width: 8%;
-        -moz-border-radius: 4px 0 0 4px;
-        -webkit-border-radius: 4px 0 0 4px;
-        -khtml-border-radius: 4px 0 0 4px;
-        border-radius: 4px 0 0 4px; }
-        .exercisetype .grid_2 .exercise .select span {
-          margin: 0 0 0 5px;
-          height: 16px;
-          width: 16px;
-          position: relative; }
-      .exercisetype .grid_2 .exercise .values {
-        display: none;
-        min-height: 20px;
-        padding: 5px 0;
-        cursor: default;
-        float: left;
-        width: 90%;
-        text-align: center;
-        -moz-border-radius: 0 4px 4px 0;
-        -webkit-border-radius: 0 4px 4px 0;
-        -khtml-border-radius: 0 4px 4px 0;
-        border-radius: 0 4px 4px 0; }
-        .exercisetype .grid_2 .exercise .values label {
-          clear: none;
-          width: auto;
-          height: auto; }
 
-/*
- * exercisesettings */
-.exercisesettings fieldset {
-  padding: 0 10px 10px 10px; }
-  .exercisesettings fieldset .fields input {
-    width: 35%;
-    float: none;
-    clear: none;
-    margin: 2px 0; }
-  .exercisesettings fieldset .headers {
-    display: none; }
-    .exercisesettings fieldset .headers label {
-      width: 40%;
-      clear: none;
-      text-align: center; }
-  .exercisesettings fieldset .add_nested_fields {
-    float: right;
-    width: 100%;
-    text-align: right; }
-  .exercisesettings fieldset .remove_nested_fields {
-    display: inline-block;
-    vertical-align: middle; }
+.note .field input[type="text"] {
+    margin-left:19px;
+}
 
-.workoutplandetails {
-  clear: right;
-  float: left;
-  margin: 0 10px 0 10px;
-  width: 350px; }
-  .workoutplandetails .new_fields {
-    float: none; }
-    .workoutplandetails .new_fields .fields {
-      padding: 0 0 10px 0; }
-      .workoutplandetails .new_fields .fields a {
-        text-decoration: none; }
-      .workoutplandetails .new_fields .fields span {
-        display: inline-block;
-        vertical-align: middle; }
-      .workoutplandetails .new_fields .fields select {
-        float: none;
-        margin: 0; }
-  .workoutplandetails .remove_nested_fields {
-    display: inline-block;
-    vertical-align: middle; }
-
-.workout_preview {
-  overflow-y: auto; }
-
-.show_workout_plan {
-  padding: 0 0 10px 0; }
-  .show_workout_plan .workout_title {
-    margin: 0 0 10px 0; }
+.note .field .label_content {
+    vertical-align:top;
+/*    padding:0;*/
+}

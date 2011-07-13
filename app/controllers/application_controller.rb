@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   private 
   
   def addnote
-    @toolbar_note = Note.new
+    if not current_user.nil?
+      @toolbar_note = current_user.notes.new
+    end
   end
 end
