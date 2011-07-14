@@ -187,4 +187,11 @@ $(document).ready(function() {
         $('#promo').slideUp();
         $('body').removeClass('has-promo');
     });
+    
+     $('.version > a').click(function() {
+      $(this).toggleClass("source-closed").toggleClass("source-open").next().toggle();
+      return false;
+     }).end().find("> div").hide(); 
 });
+
+

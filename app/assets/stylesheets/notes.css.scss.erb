@@ -1,0 +1,42 @@
+// Place all the styles related to the Notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.Notes {
+  // Place scoped styles here
+}
+.notes {
+    width:55%;
+    display:inline-block;
+}
+
+.notes .field input[type="text"] {
+    margin-left:19px;
+}
+
+.notes .field .label_content {
+    vertical-align:top;
+}
+
+.versions {
+    width:40%;
+    display:inline-block;    
+    vertical-align:top;
+}
+
+.version a:link, .version a:visited, .version a:hover, .version a:active {
+    background-position: left center;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    padding-left: 13px;
+}
+.version a.source-open:link, .version a.source-open:visited, .version a.source-open:hover, .version a.source-open:active {
+    background-image: url(<%= asset_path "demo-spindown-open.gif" %>);
+}
+.version a.source-closed:link, .version a.source-closed:visited, .version a.source-closed:hover, .version a.source-closed:active {
+    background-image: url(<%= asset_path "demo-spindown-closed.gif" %>);
+}
+
+.version div {
+  margin-left: 20px;
+}

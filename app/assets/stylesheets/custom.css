@@ -25,12 +25,3 @@ body {
 
 /*
  * Footer */
-
-.note .field input[type="text"] {
-    margin-left:19px;
-}
-
-.note .field .label_content {
-    vertical-align:top;
-/*    padding:0;*/
-}

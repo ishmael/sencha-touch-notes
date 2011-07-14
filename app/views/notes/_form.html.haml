@@ -1,11 +1,10 @@
-= form_for(@note,:html => {:class => "note"} )do |f|
+= form_for(@note,:html => {:class => "notes"} )do |f|
   -if @note.errors.any?
     #error_explanation
       %h2= "#{pluralize(@note.errors.count, "error")} prohibited this note from being saved:"
       %ul
         - @note.errors.full_messages.each do |msg|
           %li= msg
-
   .field
     = f.label :title
     = f.text_field :title
@@ -14,3 +13,22 @@
     = f.text_area :content
   .actions
     = f.submit 'Save'
+.versions
+  - @note.versions.reverse.each do |version|
+    .version
+      %a.source-closed{:href => "#"}
+        = "Version: " + version.version.to_s + " Date: "+  version.updated_at.to_s(:db)
+      %div{:style => "display: none;"}
+        %dl
+          %dt
+            Title
+          %dl
+            = version.title
+          %dt
+            Content
+          %dl
+            = version.content
+        
+        
+        
+        
