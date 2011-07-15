@@ -13,7 +13,7 @@
         %li.note
           %a.more{:href => note_path(note)} &raquo;
           = note.title
-          %p= note.updated_at
+          %p= note.updated_at.to_s(:db)
         /    
           %td= note.title
           %td= note.content
