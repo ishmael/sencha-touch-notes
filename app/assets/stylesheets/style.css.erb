@@ -209,13 +209,20 @@ body.login {
     color: white;
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
     font-size: 16px;
-    line-height: 40px;
+    height:40px;
     margin-top: 0;
     margin-bottom: 0;
     text-shadow: 0px 1px 1px black; }
     #wrapper > header h1 a {
       color: white;
-      text-decoration: none; }
+      text-decoration: none;
+      display:inline-block;
+      vertical-align:top;
+      margin-top:14px;
+       }
+    #wrapper > header h1 img {
+      margin:4px 0;
+       }       
   #wrapper > header nav {
     background: transparent url(<%= asset_path "line_vert.png" %>) repeat-y top left; }
     #wrapper > header nav ul {
