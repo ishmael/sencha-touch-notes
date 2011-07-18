@@ -8,6 +8,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.mobile
       format.json { render json: @notes }
     end
   end
