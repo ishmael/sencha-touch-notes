@@ -13,7 +13,7 @@ Notes.controllers.loginController = new Ext.Controller({
 						window.location = '/';  
 					},
 					failure: function(form, response) {
-						Ext.Msg.alert('Warning', response); 
+						Ext.Msg.alert('Warning', eval("(" + response.responseText + ")").error); 
 					}
 				});                   	
     }

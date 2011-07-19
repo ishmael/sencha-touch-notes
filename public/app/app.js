@@ -7,6 +7,6 @@ Notes = new Ext.Application({
     defaultTarget: "viewport",
     name: "Notes",
     launch: function() {
-        this.viewport = new Notes.Viewport();
+        this.viewport = new Notes.views.Viewport();
     }
 });

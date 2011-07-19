@@ -5,7 +5,7 @@
  * main viewport. By default this is simply a welcome screen that tells you that the app was 
  * generated correctly.
  */
-Notes.Viewport = Ext.extend(Ext.Panel, {
+Notes.views.Viewport = Ext.extend(Ext.Panel, {
     id        : 'viewport',
     layout    : 'card',
     fullscreen: true,
@@ -82,7 +82,7 @@ Notes.Viewport = Ext.extend(Ext.Panel, {
             ]
         });
 
-       // Notes.Viewport.superclass.initComponent.apply(this, arguments);
+        Notes.views.Viewport.superclass.initComponent.apply(this, arguments);
     },
 
     onListItemTap: function(list, index, node, e) {
