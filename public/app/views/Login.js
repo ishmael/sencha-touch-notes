@@ -35,10 +35,11 @@ Notes.views.LoginForm = Ext.extend(Ext.form.FormPanel, {
                 required: true
             }, {
                 xtype: 'checkboxfield',
-                id: 'remember',
+                id: 'remember_me',
                 name: 'user[remember_me]',
                 label: 'Save login?',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                value: '1'            
             },
             {
                 xtype: 'button',
