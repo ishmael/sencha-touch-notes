@@ -9,6 +9,6 @@
     %link{:rel => "apple-touch-icon", :href => asset_path( "note-iphone4.png"),:sizes => "114x114"}
     = stylesheet_link_tag '/lib/touch/resources/css/sencha-touch','/resources/css/application'  
     = csrf_meta_tag
-    = javascript_tag "window._token = '#{form_authenticity_token}'"
   %body
     = yield
+    = javascript_tag "Ext.Ajax.extraParams = { authenticity_token: '#{form_authenticity_token}' };"     

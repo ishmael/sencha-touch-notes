@@ -1,7 +1,7 @@
 
 Notes.models.Note = Ext.regModel("Notes.models.Note", {
     fields: [
-        {name: "_id", type: "int"},    
+        {name: "_id", type: "string"},    
         {name: "title", type: "string"},
         {name: "content", type: "string"},
         {name: "user_id", type: "int"},                     
@@ -29,7 +29,7 @@ Notes.stores.notes = new Ext.data.Store({
         type: 'rest',
         url: '/notes',
         format: 'json',
-        appendId: false,
+        appendId: true,
         reader: {
             type: 'json',
             root: 'data',

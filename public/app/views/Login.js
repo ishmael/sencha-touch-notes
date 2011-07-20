@@ -11,10 +11,7 @@ Notes.views.LoginForm = Ext.extend(Ext.form.FormPanel, {
     fullscreen: true,
 	url: '/users/sign_in.json',
 	title: 'Notes',
-	baseParams : {
-        authenticity_token: _token
-    },	
-	items: [{
+    items: [{
         xtype: 'form',
         title: '',
         items: [{
