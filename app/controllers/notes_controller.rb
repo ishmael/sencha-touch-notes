@@ -9,7 +9,7 @@ class NotesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.mobile
-      format.json { render json: @notes }
+      format.json { render :json => {:success => true, :data => @notes, :total => @notes.count} }
     end
   end
 

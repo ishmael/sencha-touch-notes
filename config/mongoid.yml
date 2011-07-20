@@ -1,7 +1,8 @@
 development:
   host: localhost
   database: sencha_touch_notes_development
-
+  include_root_in_json: true
+  
 test:
   host: localhost
   database: sencha_touch_notes_test
