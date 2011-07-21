@@ -43,16 +43,23 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = current_user.notes.new(params[:note])
-
     respond_to do |format|
-      if @note.save
-        format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
-        format.json { render json: @note, status: :created, location: @note }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+      format.html {
+        @note = current_user.notes.new(params[:note])
+        if @note.save
+          format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
+        else
+          format.html { render action: "new" }
+        end
+      }
+      format.json do
+            @note = current_user.notes.new(params[:note][0])
+            if @note.save
+              render :json =>   {:success => true, :data => [@note]}
+            else
+              render :json =>   {:success => false} 
+            end
+      end      
     end
   end
 
@@ -62,12 +69,20 @@ class NotesController < ApplicationController
     @note = current_user.notes.find(params[:id])
 
     respond_to do |format|
-      if @note.update_attributes(params[:note])
-        format.html { redirect_to notes_path, notice: 'Note was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+      format.html {
+        if @note.update_attributes(params[:note])
+          format.html { redirect_to notes_path, notice: 'Note was successfully updated.' }
+        else
+          format.html { render action: "edit" }
+        end
+      }
+      format.json do
+
+        if @note.update_attributes(params[:note][0])
+          render :json => {:success => true, :data => @note}
+        else
+          render :json => {:success => false}
+        end  
       end
     end
   end
@@ -80,7 +95,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to notes_url }
-      format.json { head :ok }
+      format.json { render :json =>  {:success => true, :data => ""}}
     end
   end
   

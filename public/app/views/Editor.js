@@ -1,3 +1,5 @@
+
+
 Notes.views.noteEditorTopToolbar = new Ext.Toolbar({
     title: 'Edit Note',
     items: [
@@ -15,21 +17,29 @@ Notes.views.noteEditorTopToolbar = new Ext.Toolbar({
             handler: function () {
 
                var currentNote = Notes.views.noteEditor.getRecord();
-
                 Notes.views.noteEditor.updateRecord(currentNote);
 
-                var errors = currentNote.validate();
+                /*var errors = currentNote.validate();
                 if (!errors.isValid()) {
                     Ext.Msg.alert('Wait!', errors.getByField('title')[0].message, Ext.emptyFn);
                     return;
-                }
+                }*/
 
                 var notesStore = Notes.views.notesList.getStore();
                 if (null == notesStore.findRecord('_id', currentNote.data._id)) {
+                    //currentNote.dirty= false;
+                    currentNote.commit();
                     notesStore.add(currentNote);
+                    notesStore.proxy.appendId= false;
                 }
+                else
+                {
+                    notesStore.proxy.appendId= true;
+                }
+                           
                 notesStore.sync();
-                notesStore.sort([{ property: 'date', direction: 'DESC'}]);
+                notesStore.sort([{ property: 'updated_at', direction: 'DESC'}]);
+
                 Notes.views.notesList.refresh();
                 Notes.views.viewport.setActiveItem('notesListContainer', { type: 'slide', direction: 'right' });
             }
@@ -48,7 +58,7 @@ Notes.views.noteEditorBottomToolbar = new Ext.Toolbar({
 
             var currentNote = Notes.views.noteEditor.getRecord();
             var notesStore = Notes.views.notesList.getStore();
-            if (notesStore.findRecord('_id', currentNote.data.id)) {
+            if (notesStore.findRecord('_id', currentNote.data._id)) {
                 notesStore.remove(currentNote);
             }
             notesStore.sync();

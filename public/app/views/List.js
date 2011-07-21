@@ -9,14 +9,10 @@ Notes.views.notesListToolbar = new Ext.Toolbar({
             text: 'New',
             ui: 'action',
             handler: function () {
-/*                var now = new Date();
-                var noteId = now.getTime();
-                var note = Ext.ModelMgr.create(
-                    { id: noteId, date: now, title:'', narrative:'' },
-                    'Note'
-                );
-                NotesApp.views.noteEditor.load(note);
-                NotesApp.views.viewport.setActiveItem('noteEditor', { type: 'slide', direction: 'left' });*/
+                var note = Ext.ModelMgr.create({},'Notes.models.Note');
+                //Notes.views.noteEditorTopToolbar.title= 'New Note';
+                Notes.views.noteEditor.load(note);
+                Notes.views.viewport.setActiveItem('noteEditor', { type: 'slide', direction: 'left' });
             }
         }
     ]
@@ -26,9 +22,11 @@ Notes.views.notesList = new Ext.List({
     id: 'notesList',
     store: 'Notes.stores.notes',
     grouped: true,
+    plugins: [{
+        ptype: 'pullrefresh'
+    }],
     emptyText: '<div style="margin:5px;">No notes cached.</div>',
     onItemDisclosure: function (record) {
-        //console.log('itemdisclosure');
         Notes.views.noteEditor.load(record);
         Notes.views.viewport.setActiveItem('noteEditor', { type: 'slide', direction: 'left' });
     },
