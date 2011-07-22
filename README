@@ -8,5 +8,10 @@ You have to have a working installation of MongoDB for the app to work.
 
 The app is basically a little note taking application. The only fancy thing it does is version your notes so you can retrieve a previous copy of the same note.
 
-What's left to do:
- - the mobile interface
+Thanks to:
+  - Jorge Ramon for letting me use the code from his tutorial to create the mobile interface
+  The tutorial:
+  http://miamicoder.com/2011/writing-a-sencha-touch-application-part-1/
+  
+  - Chris Scott for the fix to a bug in Sencha Touch
+  https://github.com/christocracy

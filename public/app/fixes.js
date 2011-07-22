@@ -1,3 +1,8 @@
+/**
+* AjaxProxy is totally borked when it comes to synchronizing records of an UPDATE or CRDATE action
+* NB: This hack assumes that server will return result recordset in the same order received.
+* Taken from: https://gist.github.com/1040439
+*/
 Ext.override(Ext.data.AjaxProxy, {
     createRequestCallback: function(request, operation, callback, scope) {
 	var me = this;
