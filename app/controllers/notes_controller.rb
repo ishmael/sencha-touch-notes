@@ -79,7 +79,7 @@ class NotesController < ApplicationController
       format.json do
 
         if @note.update_attributes(params[:note][0])
-          render :json => {:success => true, :data => @note}
+          render :json => {:success => true, :data => [@note]}
         else
           render :json => {:success => false}
         end  

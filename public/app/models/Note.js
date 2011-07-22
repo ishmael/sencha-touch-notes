@@ -4,11 +4,15 @@ Notes.models.Note = Ext.regModel("Notes.models.Note", {
         {name: "_id", type: "string"},    
         {name: "title", type: "string"},
         {name: "content", type: "string"},
-        {name: "user_id", type: "int"},                     
+        {name: "user_id", type: "string"},                     
         {name: "updated_at", type: "date",dateFormat: "c"},
         {name: "created_at", type: "date",dateFormat: "c"}        
     ],
-    idProperty: "_id"
+    idProperty: "_id",
+    validations: [
+        { type: 'presence', field: 'title', message: 'Please enter a title for this note.' },
+        { type: 'presence', field: 'content', message: 'Please enter content for this note.' }        
+    ]
 });
 
 

@@ -19,11 +19,11 @@ Notes.views.noteEditorTopToolbar = new Ext.Toolbar({
                var currentNote = Notes.views.noteEditor.getRecord();
                 Notes.views.noteEditor.updateRecord(currentNote);
 
-                /*var errors = currentNote.validate();
+                var errors = currentNote.validate();
                 if (!errors.isValid()) {
-                    Ext.Msg.alert('Wait!', errors.getByField('title')[0].message, Ext.emptyFn);
+                    Ext.Msg.alert('Wait!', errors.items[0].message, Ext.emptyFn);
                     return;
-                }*/
+                }
 
                 var notesStore = Notes.views.notesList.getStore();
                 if (null == notesStore.findRecord('_id', currentNote.data._id)) {

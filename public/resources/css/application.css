@@ -29,4 +29,10 @@
 {
     color:#ffffff;
 }
+#login > div {
+    background-color: #8EC2DA !important;
+}
 
+#login form > div {
+    background-color: #8EC2DA !important;
+}
