@@ -3,6 +3,14 @@ Notes.views.notesListToolbar = new Ext.Toolbar({
     title: 'My Notes',
     layout: 'hbox',
     items: [
+        {
+            id: 'btn-logout',
+            text: 'Logout',
+            ui: 'action',
+            handler: function () {
+                window.location = '/users/sign_out';  
+            }
+        },    
         { xtype: 'spacer' },
         {
             id: 'btn-new-note',
