@@ -1,6 +1,6 @@
 Notes.views.notesListToolbar = new Ext.Toolbar({
     id: 'notesListToolbar',
-    title: 'My Notes',
+    title: 'Notes',
     layout: 'hbox',
     items: [
         {
