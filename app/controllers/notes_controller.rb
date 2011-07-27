@@ -44,14 +44,17 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     respond_to do |format|
-      format.html {
+      format.html do
         @note = current_user.notes.new(params[:note])
+        puts 'debug'
         if @note.save
-          format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
+          puts 'save'
+           redirect_to notes_path, notice: 'Note was successfully created.' 
         else
-          format.html { render action: "new" }
+          puts 'new'
+          render action: "new" 
         end
-      }
+      end
       format.json do
             @note = current_user.notes.new(params[:note][0])
             if @note.save
@@ -69,13 +72,13 @@ class NotesController < ApplicationController
     @note = current_user.notes.find(params[:id])
 
     respond_to do |format|
-      format.html {
+      format.html do 
         if @note.update_attributes(params[:note])
-          format.html { redirect_to notes_path, notice: 'Note was successfully updated.' }
+          redirect_to notes_path, notice: 'Note was successfully updated.' 
         else
-          format.html { render action: "edit" }
+          render action: "edit" 
         end
-      }
+      end
       format.json do
 
         if @note.update_attributes(params[:note][0])
