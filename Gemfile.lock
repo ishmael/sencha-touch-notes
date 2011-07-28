@@ -131,6 +131,7 @@ DEPENDENCIES
   bson_ext
   coffee-script
   devise (~> 1.4.2)
+  execjs
   haml (>= 3.0.0)
   haml-rails
   headjs-rails

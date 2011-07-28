@@ -25,7 +25,12 @@ Notes.stores.notes = new Ext.data.Store({
         } else {
             return '';
         }
-    },    
+    },
+    sorters: [
+      {
+        property: 'updated_at',
+        direction: 'DESC'
+      }],
     proxy: {
         type: 'rest',
         url: '/notes',
