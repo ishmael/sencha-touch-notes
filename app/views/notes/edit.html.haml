@@ -1,5 +1,8 @@
 .main-content
   %header
+    %ul.action-buttons.clearfix.fr
+      %li
+        = link_to ('delete' + content_tag(:span,'',:class => 'bin')).html_safe, @note, :method => :delete ,:class => "button button-gray no-text",:title => "Delete"
     %h2
       Edit Note
   %section.container_6.clearfix
