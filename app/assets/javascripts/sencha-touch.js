@@ -1,2 +1,2 @@
-//=require touch/sencha-touch-debug
-//=require touch/mvc
+//= require touch-js/sencha-touch-debug
+//= require touch-js/mvc
