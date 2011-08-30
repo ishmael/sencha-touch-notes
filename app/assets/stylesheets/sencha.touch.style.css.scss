@@ -1,3 +1,19 @@
+$body-bg-color: #000;
+ 
+$base-color: #333;
+$base-gradient: 'matte';
+$active-color: #B2DF1E;
+ 
+$tabs-dark: $base-color;
+$tabs-light: #555;
+ 
+$tabs-bottom-radius: .4em;
+$tabs-bottom-gradient: 'bevel';
+$tabs-bar-gradient: 'matte';
+$tabs-bottom-active-gradient: 'recessed';
+ 
+$toolbar-gradient: 'glossy';
+
 @import 'touch/resources/themes/stylesheets/sencha-touch/default/all';
 @include sencha-panel;
 @include sencha-buttons;
@@ -13,6 +29,20 @@
 @include sencha-loading-spinner;
 @include sencha-list-pullrefresh;
 
+.x-toolbar .x-toolbar-title {
+    color: saturate(lighten($active-color, 10%), 20%);
+    text-shadow: rgba(#fff, .8) 0 1px 20px;
+}
+ 
+.x-tab-active img {
+    background: white none !important;
+}
+ 
+.x-tabbar.x-docked-bottom .x-tab {
+    .x-tab-active {
+        -webkit-box-shadow: inset rgba(#000, .8) 0 0 5px !important;
+    }
+}
  
 .x-tablet .x-list, .x-desktop .x-list {
   border-right: 1px solid #000;
