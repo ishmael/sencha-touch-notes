@@ -7,9 +7,6 @@ gem 'rails', '3.1.0.rc6'
 
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
 gem 'headjs-rails'
 gem 'jquery-rails'
 gem 'execjs'
@@ -23,6 +20,13 @@ gem 'execjs'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :assets do
+  gem 'sass-rails', "~> 3.1.0.rc"
+  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'uglifier'
+  gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
+end
 
 group :test do
   # Pretty printed test output
